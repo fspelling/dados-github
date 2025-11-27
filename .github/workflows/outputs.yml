@@ -1,0 +1,15 @@
+name: "Exemplo Output"
+run-name: "Pipeline (Exemplo Output) executado por ${{github.actor}}"
+
+on:
+  workflow_dispatch:
+
+jobs:
+  gerando_outputs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Gerando output com bash"
+        id: id_output
+        run: echo "action_random=$(( $RANDOM ))" >> $GITHUB_OUTPUT
+      - name: "Acessando resultado do step acima"
+        run: echo "Resultado=${{ steps.id_output.outputs.action_random }}"
