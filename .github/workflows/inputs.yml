@@ -1,0 +1,34 @@
+name: "Exemplo Input"
+run-name: "Pipeline (Exemplo Input) executado por ${{github.actor}}"
+
+on:
+  workflow_dispatch:
+    inputs:
+      versao:
+        type: string
+        required: true
+        default: "dev"
+        description: "Versao da nova release do deploy"
+      card:
+        type: number
+        required: true
+        description: "Numero da task do deploy"
+      fazer_deploy:
+        type: boolean
+        required: true
+        default: false
+        description: "Especifica se deve fazer deploy"
+      ambiente:
+        type: choice
+        description: "Selecionar ambiente do deploy"
+        options:
+          - "Dev"
+          - "Hml"
+          - "Prd"
+
+jobs:
+  valores_inputs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Listando inputs"
+        run: echo "listando inputs ${{ toJson(inputs) }}"
