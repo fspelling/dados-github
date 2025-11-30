@@ -24,7 +24,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: "${{ env.nome_artefato }}"
-          path: /artefatos
+          path: ./artefatos
       - name: "Obtendo url com os artefatos"
         run: echo "{{ steps.upload_arquivos.outputs.artifact-url }}"
   download_arquivos:
