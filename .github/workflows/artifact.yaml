@@ -14,19 +14,23 @@ jobs:
       - name: "Gerando arquivos artefatos"
         run: |
           mkdir artefatos
-          echo "arquivo de teste 01" > ./arq1.txt
-          echo "arquivo de teste 02" > ./arq2.txt
-          echo "arquivo de teste 03" > ./arq3.txt
+          echo "arquivo de teste 01" > ./artefatos/arq1.txt
+          echo "arquivo de teste 02" > ./artefatos/arq2.txt
+          echo "arquivo de teste 03" > ./artefatos/arq3.txt
+
       - name: "Listando arquivos artefatos"
-        run: ls
+        run: ls -R .
+
       - name: "upload dos arquivos no Artifact"
         id: upload_arquivos
         uses: actions/upload-artifact@v4
         with:
           name: "${{ env.nome_artefato }}"
           path: ./artefatos
+
       - name: "Obtendo url com os artefatos"
-        run: echo "{{ steps.upload_arquivos.outputs.artifact-url }}"
+        run: echo "${{ steps.upload_arquivos.outputs.artifact-url }}"
+
   download_arquivos:
     runs-on: ubuntu-latest
     needs: ["upload_arquivos"]
@@ -35,5 +39,6 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: "${{ env.nome_artefato }}"
+
       - name: "listando arquivos"
-        run: ls
+        run: ls -R .
