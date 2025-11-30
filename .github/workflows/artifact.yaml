@@ -14,9 +14,9 @@ jobs:
       - name: "Gerando arquivos artefatos"
         run: |
           mkdir artefatos
-          echo "arquivo de teste 01" > arq1.txt
-          echo "arquivo de teste 02" > arq2.txt
-          echo "arquivo de teste 03" > arq3.txt
+          echo "arquivo de teste 01" > ./arq1.txt
+          echo "arquivo de teste 02" > ./arq2.txt
+          echo "arquivo de teste 03" > ./arq3.txt
       - name: "Listando arquivos artefatos"
         run: ls
       - name: "upload dos arquivos no Artifact"
