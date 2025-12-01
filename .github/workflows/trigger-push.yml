@@ -1,0 +1,12 @@
+name: "Trigger Push"
+run-name: "Pipeline (Trigger Push) executado por ${{github.actor}}"
+
+on:
+  push:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name "Executando step"
+        run: echo "test"
