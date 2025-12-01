@@ -8,5 +8,5 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - name "Executando step"
+      - name: "Executando step"
         run: echo "test"
