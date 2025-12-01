@@ -3,6 +3,7 @@ run-name: "Pipeline (Trigger Push) executado por ${{github.actor}}"
 
 on:
   push:
+    branches: ["main", "feature/*"]
 
 jobs:
   test:
