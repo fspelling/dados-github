@@ -4,6 +4,7 @@ run-name: "Pipeline (Trigger PR) executado por ${{github.actor}}"
 on:
   pull_request:
     branches: ['main']
+    types: closed
 
 jobs:
   test:
