@@ -3,11 +3,11 @@ run-name: "Pipeline (Trigger PR) executado por ${{github.actor}}"
 
 on:
   pull_request:
-    branches: ['dev']
+    branches: ['main']
 
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
       - name: "Executando step da PR"
-        run: echo "PR"
+        run: echoo "PR"
