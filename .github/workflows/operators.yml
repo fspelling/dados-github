@@ -1,0 +1,24 @@
+name: "Exemplo Operators"
+run-name: "Pipeline (Exemplo Operators) executado por ${{github.actor}}"
+
+on:
+  workflow_dispatch:
+    inputs:
+      valor_string:
+        type: string
+      valor_number:
+        type: number
+      valor_boolean:
+        type: boolean
+        default: true
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Step string"
+        run: echo "${{ inputs.valor_string }}"
+      - name: "Step number"
+        run: echo "${{ inputs.valor_number == 10 }}"
+      - name: "Step boolean"
+        run: echo "${{ !inputs.valor_boolean }}"
