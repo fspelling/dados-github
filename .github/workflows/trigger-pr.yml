@@ -10,4 +10,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: "Executando step da PR"
-        run: echoo "PR"
+        run: echo "PR"
