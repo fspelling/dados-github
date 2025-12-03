@@ -1,0 +1,14 @@
+name: "Trigger Schedule"
+run-name: "Pipeline (Trigger Schedule) executado por ${{github.actor}}"
+
+on:
+  schedule:
+    - cron: "*/2 * * * *"
+    - cron: "0 12 1 * *"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Executando step da Schedule"
+        run: echo "Schedule"
