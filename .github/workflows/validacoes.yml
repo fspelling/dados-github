@@ -16,3 +16,6 @@ jobs:
     steps:
       - name: "Executando em qualquer branch"
         run: echo "Branch executada"
+      - name: "Executando em qualquer branch feature"
+        if: ${{ contains(github.ref, 'refs/heads/feature') }}
+        run: echo "Branch feature executada"
