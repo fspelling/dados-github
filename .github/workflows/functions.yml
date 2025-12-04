@@ -1,0 +1,14 @@
+name: "Functions"
+run-name: "Pipeline (Functions) executado por ${{github.actor}}"
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Executando step contains()"
+        run: echo "${{ contains('Novo teste', 'teste') }}"
+      - name: "Executando step format()"
+        run: echo "${{ format('{0} - {1}', 'teste 1', 'teste 2') }}"
