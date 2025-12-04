@@ -6,6 +6,7 @@ on:
 
 jobs:
   somente-main:
+    if: ${{ github.ref == 'refs/heads/main' }}
     runs-on: ubuntu-latest
     steps:
       - name: "Executando apenas branch main"
