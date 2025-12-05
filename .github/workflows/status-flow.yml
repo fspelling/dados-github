@@ -15,3 +15,8 @@ jobs:
       - name: "Step 3"
         if: ${{ failure() }}
         run: echo "Step 3"
+  segundo-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "(segundo-job) - Step 1"
+        run: echo "Step 1"
