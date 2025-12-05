@@ -1,0 +1,16 @@
+name: "Validacoes Status Workflow"
+run-name: "Pipeline (Validacoes Status Workflow) executado por ${{github.actor}}"
+
+on:
+  workflow_dispatch:
+
+jobs:
+  primeiro-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Step 1"
+        run: echo "Step 1"
+      - name: "Step 2"
+        run: echoo "erro"
+      - name: "Step 3"
+        run: echo "Step 3"
