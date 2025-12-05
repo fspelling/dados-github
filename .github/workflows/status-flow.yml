@@ -13,4 +13,5 @@ jobs:
       - name: "Step 2"
         run: echoo "erro"
       - name: "Step 3"
+        if: ${{ failure() }}
         run: echo "Step 3"
