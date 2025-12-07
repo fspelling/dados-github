@@ -1,0 +1,18 @@
+name: "Matriz"
+run-name: "Pipeline (Matriz) executado por ${{github.actor}}"
+
+on:
+  workflow_dispatch:
+
+jobs:
+  matriz-test:
+    strategy:
+      matrix:
+        versao: [16, 19, 20]
+        plataforma: ['windowa', 'ubuntu']
+    runs-on: '${{matrix.plataforma}}-latest'
+    steps:
+      - name: "Preparando ambiente NodeJS"
+        uses: actions/setup-node@v6
+        with:
+          node-version: '${{matrix.versao}}'
