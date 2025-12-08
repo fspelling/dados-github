@@ -1,0 +1,14 @@
+name: "concorrencia"
+run-name: "Pipeline (concorrencia) executado pela ${{github.run_number}} vez"
+
+on:
+  workflow_dispatch:
+
+jobs:
+  job-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Execucao step (job-test)"
+        run: |
+          sleep 120;
+          echo "Action executada"
