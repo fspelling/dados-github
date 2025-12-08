@@ -8,13 +8,17 @@ on:
         type: string
         default: "pipe-test"
 
-concurrency: "${{inputs.chave-concorrencia}}"
-
 jobs:
   job-test:
+    concurrency: "${{inputs.chave-concorrencia}}"
     runs-on: ubuntu-latest
     steps:
       - name: "Execucao step (job-test)"
         run: |
           sleep 120;
           echo "Action executada"
+  job-test-2:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Execucao step (job-test-2)"
+        run: echo "Action executada"
