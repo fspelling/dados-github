@@ -21,4 +21,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: "Execucao step (job-test-2)"
-        run: echo "Action executada"
+        run: |
+          sleep 120;
+          echo "Action executada"
