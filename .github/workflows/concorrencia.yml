@@ -10,7 +10,9 @@ on:
 
 jobs:
   job-test:
-    concurrency: "${{inputs.chave-concorrencia}}"
+    concurrency:
+      group: "${{inputs.chave-concorrencia}}"
+      cancel-in-progress: true
     runs-on: ubuntu-latest
     steps:
       - name: "Execucao step (job-test)"
