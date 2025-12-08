@@ -3,8 +3,12 @@ run-name: "Pipeline (concorrencia) executado pela ${{github.run_number}} vez"
 
 on:
   workflow_dispatch:
+    inputs: 
+      chave-concorrencia:
+        type: string
+        default: "pipe-test"
 
-concurrency: "pipe-test"
+concurrency: "${{inputs.chave-concorrencia}}"
 
 jobs:
   job-test:
