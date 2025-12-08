@@ -1,5 +1,5 @@
 name: "concorrencia"
-run-name: "Pipeline (concorrencia) executado pela ${{github.run_number}} vez"
+run-name: "Pipeline (${{inputs.chave-concorrencia}}) executado pela ${{github.run_number}} vez"
 
 on:
   workflow_dispatch:
