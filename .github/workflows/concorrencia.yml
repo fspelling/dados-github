@@ -4,6 +4,8 @@ run-name: "Pipeline (concorrencia) executado pela ${{github.run_number}} vez"
 on:
   workflow_dispatch:
 
+concurrency: "pipe-test"
+
 jobs:
   job-test:
     runs-on: ubuntu-latest
