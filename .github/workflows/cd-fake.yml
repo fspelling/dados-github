@@ -2,10 +2,8 @@ name: CD Fake
 
 on:
   workflow_call:
-    inputs:
+    secrets:
       ambiente:
-        type: string
-        default: dev
         required: true
 
 jobs:
@@ -13,4 +11,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Deploy no ambiente
-        run: echo "Executando o deploy no ambiente ${{ inputs.ambiente }}"
+        run: echo "Executando o deploy no ambiente ${{ secrets.ambiente }}"
