@@ -14,5 +14,4 @@ jobs:
     CD:
         needs: [CI]
         uses: fspelling/dados-github/.github/workflows/cd-fake.yml@main
-        secrets:
-            ambiente: ${{ secrets.AMBIENTE_ENTREGA }}
+        secrets: inherit
