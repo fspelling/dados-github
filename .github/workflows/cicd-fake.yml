@@ -13,5 +13,5 @@ jobs:
               run: echo "Publicação da Relase final"
     CD:
         needs: [CI]
-        uses: fspelling/dados-github/.github/workflows/cd-fake.yml@main
+        uses: fspelling/repo-reaproveitavel/.github/workflows/cd-fake.yml@main
         secrets: inherit
